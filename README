@@ -6,36 +6,17 @@ THE IANA /etc FILES PACKAGE
 ABOUT
 
     The iana-etc package installs services(5) and protocols(5) using data from
-    the Internet Assigned Numbers Authority <http://www.iana.org/>.  In future,
+    the Internet Assigned Numbers Authority <https://www.iana.org/>.  In future,
     other such files may be added.
 
     Included are snapshots of the data from the IANA, scripts to transform that
     data into the needed formats, and scripts to fetch the latest data.
 
-    Maintainer: Seth W. Klein <sk@sethwklein.net>
-    Home Page: http://www.sethwklein.net/projects/iana-etc/
+    Maintainer: DJ Lucas <dj@linuxfromscratch.org>
+    Home Page: https://github.com/djlucas/iana-etc/
+    Thanks to Seth W. Klein for earlier versions of the package.
 
     Bug reports and patches are welcome.
-
-PORT ALIASES
-
-    Please report any additional port aliases that you need. The port-aliases
-    file contains the current list.  To minimize cruft, it includes only
-    aliases for which there has been reported need. 
-
-    If you need an alias that isn't included, you may see the error:
-
-	getaddrinfo: Servname not supported for ai_socktype
-
-    Some useful things for finding out what alias is needed:
-      * strace from <http://www.wi.leidenuniv.nl/~wichert/strace/>
-      * grep -r 'getaddrinfo' in the appropriate source tree
-
-    The various RFCs and such usually list the number for an alias but it may
-    be faster to just check the FreeBSD services file at
-    <http://www.freebsd.org/cgi/cvsweb.cgi/src/etc/services>.
-
-    Bug reports and patches are welcome at the maintainer address listed above.
 
 DEPENDENCIES
 
@@ -55,6 +36,10 @@ DEPENDENCIES
 	Testing is only done with GNU Make but incompatibilities with other
 	make implementations are bugs. Please send patches.
 
+    Perl (optional)
+        Perl can be used to download the updated files from upstream. Suitable
+        files are provided in the distribution.
+
 INSTALLATION
 
     The installation process is flexible and friendly to unattended install-
@@ -68,11 +53,6 @@ INSTALLATION
 
     This creates /etc/services and /etc/protocols without using internet
     access.
-
-    To throw out the useful comments in generated files (useful for embedded
-    installations), use:
-
-	make STRIP=yes
 
     To install to a temporary location as package managers often do, use
     DESTDIR like this:
@@ -112,10 +92,4 @@ DOCUMENTATION
     Man pages are provided by the man-pages package. See
     http://ftp.kernel.org/pub/linux/docs/manpages/ and
     http://freshmeat.net/projects/man-pages/
-
-BUGS
-
-    The Makefile uses the .PHONY target which (according to the GNU Make
-    info page, IIRC) is not supported by other common make implementations.  
-    There are plans to fix this in a future release.
 
