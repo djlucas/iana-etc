@@ -15,6 +15,8 @@ ABOUT
     Maintainer: DJ Lucas <dj@linuxfromscratch.org>
     Home Page: https://github.com/djlucas/iana-etc/
     Thanks to Seth W. Klein for earlier versions of the package.
+    New awk script taken from Arch Linux at:
+    https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/iana-etc
 
     Bug reports and patches are welcome.
 
